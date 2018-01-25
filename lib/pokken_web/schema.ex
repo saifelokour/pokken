@@ -1,18 +1,12 @@
 defmodule PokkenWeb.Schema do
   use Absinthe.Schema
+  alias PokkenWeb.PokemonResolver
 
-  alias PokkenWeb.NewsResolver
-
-  object :link do
-    field :id, non_null(:id)
-    field :url, non_null(:string)
-    field :description, non_null(:string)
-
-  end
+  import_types PokkenWeb.Schema.Types
 
   query do
-    field :all_links, non_null(list_of(non_null(:link))) do
-        resolve &NewsResolver.all_links/3
+    field :pokemon_list, :pokemon |> non_null |> list_of |> non_null do
+      resolve &PokemonResolver.pokemon/3
     end
   end
 end

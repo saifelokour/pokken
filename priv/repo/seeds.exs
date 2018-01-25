@@ -9,8 +9,29 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
-alias Pokken.News.Link
+alias Pokken.Pokemon.Info
+alias Pokken.Pokemon.Move
 alias Pokken.Repo
 
-%Link{url: "http://graphql.org/", description: "The Best Query Language"} |> Repo.insert!
-%Link{url: "http://dev.apollodata.com/", description: "Awesome GraphQL Client"} |> Repo.insert!
+%Info {
+    name: "Siza",
+    style: "Fighter",
+    type: "Fire"
+} |> Repo.insert!
+
+%Move {
+    block: "Test",
+    category: "Test",
+    damage: "Test",
+    heigh: "Test",
+    hit_duel: "Test",
+    hit_field: "Test",
+    impact: "Test",
+    move_input: "Test",
+    name: "Test",
+    notes: "Test",
+    phase: "Test",
+    pokemon_id: 1,
+    psp: "Test",
+    type: "Test",
+} |> Repo.insert!
