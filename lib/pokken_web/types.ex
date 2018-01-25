@@ -28,4 +28,10 @@ defmodule PokkenWeb.Schema.Types do
     field :psp, :string
     field :type, :string
   end
+
+  query do
+    field :pokemon_list, :pokemon |> non_null |> list_of |> non_null do
+      resolve &PokemonResolver.pokemon/3
+    end
+  end
 end
