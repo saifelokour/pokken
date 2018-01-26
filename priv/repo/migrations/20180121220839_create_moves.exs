@@ -15,7 +15,7 @@ defmodule Pokken.Repo.Migrations.CreateMoves do
       add :hit_duel, :string
       add :psp, :string
       add :damage, :string
-      add :heigh, :string
+      add :height, :string
       add :notes, :string
 
       timestamps()

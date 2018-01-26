@@ -2,7 +2,7 @@ defmodule PokkenWeb.Schema.Types do
   use Absinthe.Schema.Notation
   use Absinthe.Ecto, repo: Pokken.Repo
 
-  @desc "Pokemon Info"
+  @desc "Pokemon Profile"
   object :pokemon do
     field :name, :string
     field :style, :string
@@ -15,7 +15,7 @@ defmodule PokkenWeb.Schema.Types do
     field :block, :string
     field :category, :string
     field :damage, :string
-    field :heigh, :string
+    field :height, :string
     field :hit_duel, :string
     field :hit_field, :string
     field :impact, :string

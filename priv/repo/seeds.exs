@@ -9,21 +9,23 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
-alias Pokken.Pokemon.Info
+alias Pokken.Pokemon.Profile
 alias Pokken.Pokemon.Move
 alias Pokken.Repo
 
-%Info {
+%Profile {
     name: "Siza",
     style: "Fighter",
-    type: "Fire"
+    type: "Fire",
+    synergy_duration: 100,
+    synergy_gauge_size: 100
 } |> Repo.insert!
 
 %Move {
     block: "Test",
     category: "Test",
     damage: "Test",
-    heigh: "Test",
+    height: "Test",
     hit_duel: "Test",
     hit_field: "Test",
     impact: "Test",
@@ -35,3 +37,4 @@ alias Pokken.Repo
     psp: "Test",
     type: "Test",
 } |> Repo.insert!
+

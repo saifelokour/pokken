@@ -6,196 +6,100 @@ defmodule Pokken.Pokemon do
   import Ecto.Query, warn: false
   alias Pokken.Repo
 
-  alias Pokken.Pokemon.Info
+  alias Pokken.Pokemon.Profile
 
   @doc """
-  Returns the list of info.
+  Returns the list of profile.
 
   ## Examples
 
-      iex> list_info()
-      [%Info{}, ...]
+      iex> list_profiles()
+      [%Profile{}, ...]
 
   """
-  def list_info do
-    Repo.all(Info)
+  def list_profiles do
+    Repo.all(Profile)
   end
 
   @doc """
-  Gets a single info.
+  Gets a single profile.
 
-  Raises `Ecto.NoResultsError` if the Info does not exist.
+  Raises `Ecto.NoResultsError` if the profile does not exist.
 
   ## Examples
 
-      iex> get_info!(123)
-      %Info{}
+      iex> get_profile!(123)
+      %Profile{}
 
-      iex> get_info!(456)
+      iex> get_profile!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_info!(id), do: Repo.get!(Info, id)
+  def get_profile!(id), do: Repo.get!(Profile, id)
 
   @doc """
-  Creates a info.
+  Creates a profile.
 
   ## Examples
 
-      iex> create_info(%{field: value})
-      {:ok, %Info{}}
+      iex> create_profile(%{field: value})
+      {:ok, %Profile{}}
 
-      iex> create_info(%{field: bad_value})
+      iex> create_profile(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_info(attrs \\ %{}) do
-    %Info{}
-    |> Info.changeset(attrs)
+  def create_profile(attrs \\ %{}) do
+    %Profile{}
+    |> Profile.changeset(attrs)
     |> Repo.insert()
   end
 
   @doc """
-  Updates a info.
+  Updates a profile.
 
   ## Examples
 
-      iex> update_info(info, %{field: new_value})
-      {:ok, %Info{}}
+      iex> update_profile(profile, %{field: new_value})
+      {:ok, %profile{}}
 
-      iex> update_info(info, %{field: bad_value})
+      iex> update_profile(profile, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_info(%Info{} = info, attrs) do
-    info
-    |> Info.changeset(attrs)
+  def update_profile(%Profile{} = profile, attrs) do
+    profile
+    |> profile.changeset(attrs)
     |> Repo.update()
   end
 
   @doc """
-  Deletes a Info.
+  Deletes a profile.
 
   ## Examples
 
-      iex> delete_info(info)
-      {:ok, %Info{}}
+      iex> delete_profile(profile)
+      {:ok, %profile{}}
 
-      iex> delete_info(info)
+      iex> delete_profile(profile)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_info(%Info{} = info) do
-    Repo.delete(info)
+  def delete_profile(%Profile{} = profile) do
+    Repo.delete(profile)
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking info changes.
+  Returns an `%Ecto.Changeset{}` for tracking profile changes.
 
   ## Examples
 
-      iex> change_info(info)
-      %Ecto.Changeset{source: %Info{}}
+      iex> change_profile(profile)
+      %Ecto.Changeset{source: %profile{}}
 
   """
-  def change_info(%Info{} = info) do
-    Info.changeset(info, %{})
-  end
-
-  alias Pokken.Pokemon.Synergy
-
-  @doc """
-  Returns the list of synergy.
-
-  ## Examples
-
-      iex> list_synergy()
-      [%Synergy{}, ...]
-
-  """
-  def list_synergy do
-    Repo.all(Synergy)
-  end
-
-  @doc """
-  Gets a single synergy.
-
-  Raises `Ecto.NoResultsError` if the Synergy does not exist.
-
-  ## Examples
-
-      iex> get_synergy!(123)
-      %Synergy{}
-
-      iex> get_synergy!(456)
-      ** (Ecto.NoResultsError)
-
-  """
-  def get_synergy!(id), do: Repo.get!(Synergy, id)
-
-  @doc """
-  Creates a synergy.
-
-  ## Examples
-
-      iex> create_synergy(%{field: value})
-      {:ok, %Synergy{}}
-
-      iex> create_synergy(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_synergy(attrs \\ %{}) do
-    %Synergy{}
-    |> Synergy.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  @doc """
-  Updates a synergy.
-
-  ## Examples
-
-      iex> update_synergy(synergy, %{field: new_value})
-      {:ok, %Synergy{}}
-
-      iex> update_synergy(synergy, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_synergy(%Synergy{} = synergy, attrs) do
-    synergy
-    |> Synergy.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
-  Deletes a Synergy.
-
-  ## Examples
-
-      iex> delete_synergy(synergy)
-      {:ok, %Synergy{}}
-
-      iex> delete_synergy(synergy)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_synergy(%Synergy{} = synergy) do
-    Repo.delete(synergy)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking synergy changes.
-
-  ## Examples
-
-      iex> change_synergy(synergy)
-      %Ecto.Changeset{source: %Synergy{}}
-
-  """
-  def change_synergy(%Synergy{} = synergy) do
-    Synergy.changeset(synergy, %{})
+  def change_profile(%Profile{} = profile) do
+    Profile.changeset(profile, %{})
   end
 
   alias Pokken.Pokemon.Move

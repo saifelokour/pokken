@@ -7,7 +7,7 @@ defmodule Pokken.Pokemon.Move do
     field :block, :string
     field :category, :string
     field :damage, :string
-    field :heigh, :string
+    field :height, :string
     field :hit_duel, :string
     field :hit_field, :string
     field :impact, :string
@@ -17,7 +17,7 @@ defmodule Pokken.Pokemon.Move do
     field :phase, :string
     field :psp, :string
     field :type, :string
-    belongs_to :info, Pokken.Pokemon.Info, foreign_key: :pokemon_id
+    belongs_to :info, Pokken.Pokemon.Profile, foreign_key: :pokemon_id
 
     timestamps()
   end
@@ -25,8 +25,8 @@ defmodule Pokken.Pokemon.Move do
   @doc false
   def changeset(%Move{} = move, attrs) do
     move
-    |> cast(attrs, [:pokemon_id, :name, :category, :move_input, :type, :phase, :impact, :block, :hit_field, :hit_duel, :psp, :damage, :heigh, :notes])
-    |> validate_required([:pokemon_id, :name, :category, :move_input, :type, :phase, :impact, :block, :hit_field, :hit_duel, :psp, :damage, :heigh, :notes])
+    |> cast(attrs, [:pokemon_id, :name, :category, :move_input, :type, :phase, :impact, :block, :hit_field, :hit_duel, :psp, :damage, :height, :notes])
+    |> validate_required([:pokemon_id, :name, :category, :move_input, :type, :phase, :impact, :block, :hit_field, :hit_duel, :psp, :damage, :height, :notes])
     |> foreign_key_constraint(:pokemon_id)
   end
 end
