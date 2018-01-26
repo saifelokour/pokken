@@ -5,9 +5,4 @@ defmodule PokkenWeb.PokemonResolver do
     pokemon = Pokemon.list_info()
     {:ok, pokemon}
   end
-
-  def moves(root, _args, _info) do
-    root |> IO.inspect
-    {:ok, root}
-  end
 end

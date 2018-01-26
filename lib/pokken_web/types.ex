@@ -1,5 +1,4 @@
 defmodule PokkenWeb.Schema.Types do
-  use Absinthe.Schema
   use Absinthe.Schema.Notation
   use Absinthe.Ecto, repo: Pokken.Repo
 
@@ -27,11 +26,5 @@ defmodule PokkenWeb.Schema.Types do
     field :pokemon_id, :integer
     field :psp, :string
     field :type, :string
-  end
-
-  query do
-    field :pokemon_list, :pokemon |> non_null |> list_of |> non_null do
-      resolve &PokemonResolver.pokemon/3
-    end
   end
 end

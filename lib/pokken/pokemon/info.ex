@@ -8,7 +8,7 @@ defmodule Pokken.Pokemon.Info do
     field :name, :string
     field :style, :string
     field :type, :string
-    has_many :moves, Pokken.Pokemon.Move
+    has_many :moves, Pokken.Pokemon.Move, foreign_key: :pokemon_id
 
     timestamps()
   end
